@@ -11,7 +11,7 @@ class RPS::Server < Sinatra::Application
 
   # homepage with info, leaderboard, quickplay
   get '/' do
-    @players = RPS::Player.all
+    @players = RPS::Player.all.order(wins: :desc, name: :asc)
     @tourneys = RPS::Tourney.all
     @games = RPS::Game.all
 
@@ -36,7 +36,6 @@ class RPS::Server < Sinatra::Application
       end
     end  
 
-    binding.pry
     # create a new tourney
     tourney = RPS::Tourney.create(name: params[:tourney_name])
 
@@ -71,7 +70,7 @@ class RPS::Server < Sinatra::Application
     @games = RPS::Game.where(tourney_id: params[:id]) # array of games
     @tourney = RPS::Tourney.find(params[:id])
     # if session[:message]
-    #   @message = session[:message] 
+    #   @message = session[:message] `
     #   session[:message] = nil
     # end
 
@@ -124,10 +123,10 @@ class RPS::Server < Sinatra::Application
     rd3 = RPS::Game.where(tourney_id: tourney, round: 3)
 
     if w.length == 0 && x.length == 4
-      RPS::Player.increment_count(:wins, rd1[0].winner)
-      RPS::Player.increment_count(:wins, rd1[1].winner)
-      RPS::Player.increment_count(:wins, rd1[2].winner)
-      RPS::Player.increment_count(:wins, rd1[3].winner)
+      RPS::Player.update(rd1[0].winner, wins: rd1[0].winner.wins += 1)
+      RPS::Player.update(rd1[1].winner, wins: rd1[1].winner.wins += 1)
+      RPS::Player.update(rd1[2].winner, wins: rd1[2].winner.wins += 1)
+      RPS::Player.update(rd1[3].winner, wins: rd1[3].winner.wins += 1)
 
       rd2game1 = RPS::Game.create(tourney: tourney, round: 2)
       RPS::Move.create(game: rd2game1, player: rd1[0].winner)
@@ -136,16 +135,15 @@ class RPS::Server < Sinatra::Application
       rd2game2 = RPS::Game.create(tourney: tourney, round: 2)
       RPS::Move.create(game: rd2game2, player: rd1[2].winner)
       RPS::Move.create(game: rd2game2, player: rd1[3].winner)
-      binding.pry
     elsif w.length == 0 && x.length == 6
-      RPS::Player.increment_count(:wins, rd2[0].winner)
-      RPS::Player.increment_count(:wins, rd2[1].winner)
+      RPS::Player.update(rd2[0].winner, wins: rd2[0].winner.wins += 1)
+      RPS::Player.update(rd2[1].winner, wins: rd2[1].winner.wins += 1)
 
       rd3game1 = RPS::Game.create(tourney: tourney, round: 3)
       RPS::Move.create(game: rd3game1, player: rd2[0].winner)
       RPS::Move.create(game: rd3game1, player: rd2[1].winner)
     elsif w.length == 0 && x.length == 7
-      RPS::Player.increment_count(:wins, rd3[0].winner)
+      RPS::Player.update(rd3[0].winner, wins: rd3[0].winner.wins += 1)
       tourney.winner = rd3[0].winner
       tourney.save
     end

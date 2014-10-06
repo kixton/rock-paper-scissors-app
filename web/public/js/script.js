@@ -11,19 +11,19 @@ $(document).ready(function() {
     $.post( "/signup", { name: name, email: email, phone: phone, password: password } );
   });
 
-  // $(".btn-lg").click(function(event) {
-  //   console.log("move made");
-  //   var id = $("input[name=game_id]").val();
-  //   var move = $(this).val();
+  $(".btn-lg").click(function(event) {
+    console.log("move made");
+    var id = $("input[name=game_id]").val();
+    var move = $(this).val();
 
-  //   console.log("move: " + move);
-  //   console.log("move_id: " + id);
+    console.log("move: " + move);
+    console.log("move_id: " + id);
 
-  //   $.post( "/move/" + id, { id: id, move: move }, function() {
-  //      window.location = "/"
-  //   } );
+    $.post( "/move/" + id, { id: id, move: move }, function() {
+      // window.location = "/rps/" + tourney_id
+    } );
 
-  // });
+  });
 
   $("button").click(function(event) {
     // look at `event` or `this` 

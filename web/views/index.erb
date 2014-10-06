@@ -1,6 +1,7 @@
 
 
 <div class="main-div">
+
   Did someone invite you to play?
   <form>
   <input type="string" name="game_id" class="input-box" placeholder="Enter Game ID"><br>  
@@ -18,7 +19,33 @@
 </div>
 
 <div class="leaderboard">
-<table>
+
+<table widht="250">
+  <tr> 
+    <th colspan="2" class="leaderboard-title">TOURNAMENTS</th>
+  </tr>
+
+  <tr>
+    <th>Tourney Name</th>
+    <th>Winner</th>
+  </tr>
+
+  <% @tourneys.each do |tourney| %>
+    <tr>
+      <td>
+        <a href="/rps/<%= tourney.id %>"><%= tourney.name %></a>
+      </td>
+      <td>
+        <%= tourney.winner ? tourney.winner.name : "In progress" %>
+      </td>
+    </tr>
+  <% end %>
+<br>
+</table>
+
+<br>
+
+<table width="250">
   <tr> 
     <th colspan="4" class="leaderboard-title">LEADERBOARD</th>
   </tr>
@@ -26,25 +53,22 @@
     <th>Rank</th>
     <th>Player</th>
     <th>Wins</th>
-    <th>Losses</th>
+    <!-- <th>Losses</th> -->
   </tr>
 
+  
+  <% i = 1 %>
   <% @players.each do |player| %>
     <tr>
-      <td> </td>
+      <td> <%= i %> </td>
       <td><%= player.name %></td>
       <td><%= player.wins %></td> 
-      <td><%= player.losses %></td>
+      <!-- <td><%= player.losses %></td> -->
     </tr>
+    <% i += 1 %>
   <% end %>
 </table>
 <br>
-CURRENT TOURNAMENTS<br>
-<ul>
-  <% @tourneys.each do |tourney| %>
-    <li><a href="/rps/<%= tourney.id %>"><%= tourney.name %></a></li>
-  <% end %>
-</ul>
 </div>
 <br>
 

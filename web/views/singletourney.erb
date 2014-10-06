@@ -1,21 +1,21 @@
 <link href="../css/style.css" type="text/css" rel="stylesheet">
 
-<div class="main.div">
+<div class="tourney-info">
 
 <h2>Tourney #<%= @games[0].tourney_id %></h2>
-<h2>Winner: <%= @tourney.winner.name if @tourney.winner %></h2>
+<h2>Winner: <%= @tourney.winner ? @tourney.winner.name : "Tourney in progress" %></h2>
 
 <% @games.each do |game| %>
   
-  Round: <%= game.round %><br>
-  Players: <%= game.players[0].name %>
+  <strong>Round:</strong> <%= game.round %><br>
+  Players: <%= game.moves[0].player.name %>
   <% if game.moves[0].move != nil %>
     (moved)
   <% else %>
     (<a href="/play/<%= game.moves[0].id %>">pending</a>)
   <% end %>,
 
-  <%= game.players[1].name %>
+  <%= game.moves[1].player.name %>
   <% if game.moves[1].move != nil %>
     (moved)
   <% else %>

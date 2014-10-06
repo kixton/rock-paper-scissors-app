@@ -41,7 +41,8 @@ a {
 
 .sidebar,
 .main-div,
-.leaderboard {
+.leaderboard,
+.tourney-info {
   float: left;
   margin: 15px;
 }
