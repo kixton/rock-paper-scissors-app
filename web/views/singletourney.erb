@@ -1,0 +1,38 @@
+<link href="../css/style.css" type="text/css" rel="stylesheet">
+
+<div class="main.div">
+
+<h2>Tourney #<%= @games[0].tourney_id %></h2>
+<h2>Winner: <%= @tourney.winner.name if @tourney.winner %></h2>
+
+<% @games.each do |game| %>
+  
+  Round: <%= game.round %><br>
+  Players: <%= game.players[0].name %>
+  <% if game.moves[0].move != nil %>
+    (moved)
+  <% else %>
+    (<a href="/play/<%= game.moves[0].id %>">pending</a>)
+  <% end %>,
+
+  <%= game.players[1].name %>
+  <% if game.moves[1].move != nil %>
+    (moved)
+  <% else %>
+    (<a href="/play/<%= game.moves[1].id %>">pending</a>)
+  <% end %>
+  <br>
+  <% if game.tie == true %>
+    Winner: Tied (pending rematch)<br>
+  <% elsif game.winner_id == nil %>
+    Winner: Pending<br>
+  <% else %>
+    Winner: <%= game.winner.name %><br>
+  <% end %>  
+
+
+  <br>
+
+<% end %>
+
+</div>

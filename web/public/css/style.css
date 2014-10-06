@@ -1,0 +1,189 @@
+
+body {
+  font-family: Raleway;
+  background: #ffeb3b;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  outline: 0;
+}
+
+a {
+  color: #000;
+}
+
+::-webkit-input-placeholder {
+  color: #444;  
+}
+:-moz-placeholder {
+  color: #444;  
+}
+::-moz-placeholder {
+  color: #444;    
+}
+:-ms-input-placeholder {  
+  color: #444;  
+}
+
+.logo,
+.about {
+  border: 3px solid #000;
+  float: left;
+  padding: 10px;
+  margin-right: 20px;
+  color: #000;
+  width: 180px;
+}
+
+.sidebar,
+.main-div,
+.leaderboard {
+  float: left;
+  margin: 15px;
+}
+
+.main-div {
+  margin-left: 0px;
+}
+
+.about {
+  clear: both;
+  margin-top: 10px;
+}
+
+.logo-ltr {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.logo-author {
+  font-size: 12px;
+  padding-top: 50px;
+}
+
+.abt-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.about {
+  font-size: 14px;
+}
+
+.about ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.fa-chevron-circle-right {
+  font-size: 12px;
+}
+
+.btn-lg {
+  font-size: 16px;
+  font-family: Raleway;
+  background: #ffeb3b;
+  color: #000;
+  border: 3px solid #000;
+  border-radius: 30px;
+  padding: 7px 15px;
+}
+
+.btn-lg.xl {
+  font-size: 40px;
+}
+
+.btn-lg.main {
+  font-size: 16px;
+  font-family: Raleway;
+  background: #000;
+  color: #ffeb3b;
+  border: 3px solid #000;
+  border-radius: 30px;
+  padding: 7px 15px;
+}
+
+.btn-lg.main:hover {
+  font-weight: bold;
+}
+
+.play {
+  margin-top: 10px;
+}
+
+.input-box {
+  font-size: 16px;
+  font-family: Raleway;
+  background: #ffeb3b;
+  color: #000;
+  border: 3px solid #000;
+  border-radius: 30px;
+  padding: 7px 15px;
+  width: 110px;
+}
+
+.signup-login {
+  width: 200px;
+}
+
+.btn-lg:hover {
+  background: #000;
+  color: #ffeb3b;  
+  border: 3px solid #000;
+}
+
+.fa-question-circle {
+  padding-right: 5px;
+}
+
+.how-login {
+  float: right;
+}
+
+.how {
+  float: right;
+  display: inline;
+  border: 0px;
+  color: #000;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.how:hover {
+  font-weight: bold;
+}
+
+.leaderboard-title {
+  text-align: left;
+  background: #000;
+  color: #ffeb3b;
+}
+
+table {
+  border: 2px solid #000;
+}
+tr {
+  border: 1px solid #000;
+}
+th, td {
+  padding: 5px 10px;
+}
+
+.best {
+  margin-left: 30px;
+}
+
+.creator {
+  border-radius: 100%;
+  height: 15px;
+  width: 15px;
+  border: 2px solid #000;
+  background: #ffeb3b;
+}
+
+

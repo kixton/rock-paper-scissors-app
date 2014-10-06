@@ -1,0 +1,93 @@
+<link href="../css/style.css" type="text/css" rel="stylesheet">
+
+<div class="main-div">
+
+  <h1>NEW TOURNAMENT</h1>
+  <form action="/rps" method="post">
+
+    Tourney Name: <input type="text" name="tourney_name"><br>
+    <br>
+
+    <label for="num_players">Players</label> <select id="num_players" name="num_players">
+      <option value="2">2</option>
+      <option value="4">4</option>
+      <option value="6">6</option>
+      <option value="8" selected="selected">8</option>
+    </select>
+
+    <label for="best_of">Best of (per Round)</label> <select id="best_of" name="best_of">
+      <option value="1_of_1">1 of 1</option>
+      <option value="2_of_3">2 of 3</option>
+      <option value="3_of_5">3 of 5</option>
+    </select>
+    <br>
+    <br>
+    <br>
+    
+    <label>Name</label>
+    <input type="text" name="players[][name]">
+    <label>Mobile #</label>
+    <input type="integer" name="players[][phone]">
+    <label>Email</label>
+    <input type="email" name="players[][email]">  
+    <br>
+    <label>Name</label>
+    <input type="text" name="players[][name]">
+    <label>Mobile #</label>
+    <input type="integer" name="players[][phone]">
+    <label>Email</label>
+    <input type="email" name="players[][email]">
+    <br>
+    <label>Name</label>
+    <input type="text" name="players[][name]">
+    <label>Mobile #</label>
+    <input type="integer" name="players[][phone]">
+    <label>Email</label>
+    <input type="email" name="players[][email]">  
+    <br>
+    <label>Name</label>
+    <input type="text" name="players[][name]">
+    <label>Mobile #</label>
+    <input type="integer" name="players[][phone]">
+    <label>Email</label>
+    <input type="email" name="players[][email]">
+    <br>
+    <label>Name</label>
+    <input type="text" name="players[][name]">
+    <label>Mobile #</label>
+    <input type="integer" name="players[][phone]">
+    <label>Email</label>
+    <input type="email" name="players[][email]">  
+    <br>
+    <label>Name</label>
+    <input type="text" name="players[][name]">
+    <label>Mobile #</label>
+    <input type="integer" name="players[][phone]">
+    <label>Email</label>
+    <input type="email" name="players[][email]">
+    <br>
+    <label>Name</label>
+    <input type="text" name="players[][name]">
+    <label>Mobile #</label>
+    <input type="integer" name="players[][phone]">
+    <label>Email</label>
+    <input type="email" name="players[][email]">  
+    <br>
+    <label>Name</label>
+    <input type="text" name="players[][name]">
+    <label>Mobile #</label>
+    <input type="integer" name="players[][phone]">
+    <label>Email</label>
+    <input type="email" name="players[][email]">
+    <br>
+    <!-- NOTES: auto populate below based on # players<br>
+    Auto populate for the person creating the tourney<br>
+    <span class="fa fa-plus-circle"></span> More Players<br>
+    <span class="fa fa-minus-circle"></span> Less Players<br> -->
+    <br>
+    <input type="submit" value="Continue" class="btn-lg">
+
+
+  </form>
+</div>
+

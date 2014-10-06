@@ -1,0 +1,13 @@
+
+development:
+  adapter: postgresql
+  database: rps-tourney
+  pool: 5
+  timeout: 5000
+  # OPTIONAL username: & password
+
+test:
+  adapter: postgresql
+  database: rps-tourney
+  pool: 5
+  timeout: 5000

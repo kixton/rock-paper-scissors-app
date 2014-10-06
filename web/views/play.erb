@@ -1,0 +1,18 @@
+<link href="../css/style.css" type="text/css" rel="stylesheet">
+
+<span class="tourney_id" id="<%= @move[0].game.tourney_id %>">Tourney #<%= @move[0].game.tourney_id %></span><br>
+Round: <%= @move[0].game.round %><br>
+Player: <%= @move[0].player.name %><br>
+Opponent: <%= @move[0].game.opponent(@move[0].player).name %><br>
+
+<br>
+
+<div data-move-id="<%= @move[0].id %>">
+Pick your move:<br>
+<button class="btn-lg xl" value="rock">Rock</button>
+<button class="btn-lg xl" value="paper">Paper</button>
+<button class="btn-lg xl" value="scissors">Scissors</button>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../js/script.js"></script>

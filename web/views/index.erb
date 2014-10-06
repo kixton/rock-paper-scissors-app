@@ -1,0 +1,52 @@
+
+
+<div class="main-div">
+  Did someone invite you to play?
+  <form>
+  <input type="string" name="game_id" class="input-box" placeholder="Enter Game ID"><br>  
+  Pick your move:<br>
+  <button class="btn-lg" value="rock">Rock</button>
+  <button class="btn-lg" value="paper">Paper</button>
+  <button class="btn-lg" value="scissors">Scissors</button>
+  <br>
+  </form>
+  <br><br>
+
+  Tired of never getting invited to play?<br>
+  <a href="/rps/new"><button type="button" class="btn-lg main">START YOUR OWN TOURNAMENT</button></a>
+  <br><br>
+</div>
+
+<div class="leaderboard">
+<table>
+  <tr> 
+    <th colspan="4" class="leaderboard-title">LEADERBOARD</th>
+  </tr>
+  <tr>
+    <th>Rank</th>
+    <th>Player</th>
+    <th>Wins</th>
+    <th>Losses</th>
+  </tr>
+
+  <% @players.each do |player| %>
+    <tr>
+      <td> </td>
+      <td><%= player.name %></td>
+      <td><%= player.wins %></td> 
+      <td><%= player.losses %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+CURRENT TOURNAMENTS<br>
+<ul>
+  <% @tourneys.each do |tourney| %>
+    <li><a href="/rps/<%= tourney.id %>"><%= tourney.name %></a></li>
+  <% end %>
+</ul>
+</div>
+<br>
+
+
+
