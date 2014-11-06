@@ -1,15 +1,16 @@
 rock-paper-scissors-app
 =======================
 
-application to play 'rock-paper-scissors' hand game
+Application to play 'rock-paper-scissors' hand game
 
 =======================
 
 The index ('/') allows you to:
-1) Sign Up and Log In (in progress)
-2) View leader board (in progress)
-3) Create a new tournament (which in turn creates new users)
+1) Sign Up/Log In
+2) View leader board
+3) Create a new tournament and create new users
 4) View existing tournaments
+5) Play a game
 
 The application allows you to make a move by selecting 'rock', 'paper', or 'scissors'. The application will determine the winner of a game after both players have made a move. The rules of the game are defined in the rock-paper-scissors Gem.
 
