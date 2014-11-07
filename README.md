@@ -1,7 +1,6 @@
 =======================
 
 Application to play the 'rock-paper-scissors' hand game online
-
 =======================
 
 Features:
