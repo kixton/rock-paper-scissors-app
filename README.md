@@ -5,7 +5,7 @@ Application to play the 'rock-paper-scissors' hand game online
 
 Features:
 * Sign Up/Log In
-* * Play a game
+* Play a game
 * View leader board
 * Create a new tournament
 * Create new users
